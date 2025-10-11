@@ -1,6 +1,10 @@
 {
   "manifest_version": 2,
   "name": "Fast Image Downloader",
+  "developer": {
+    "name": "Fernando Borretti",
+    "url": "https://borretti.me/"
+  },
   "version": "1.0",
   "description": "Download images by double-clicking them.",
   "permissions": ["downloads", "<all_urls>"],
