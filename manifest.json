@@ -5,6 +5,7 @@
     "name": "Fernando Borretti",
     "url": "https://borretti.me/"
   },
+  "homepage_url": "https://github.com/eudoxia0/double-click-image-downloader",
   "version": "1.0",
   "description": "Download images by double-clicking them.",
   "permissions": ["downloads", "<all_urls>"],
