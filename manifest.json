@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Fast Image Downloader",
+  "version": "1.0",
+  "description": "Download images by double-clicking them.",
+  "permissions": ["downloads", "<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "48": "icon.png",
+    "96": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
