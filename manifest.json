@@ -22,5 +22,8 @@
   },
   "background": {
     "scripts": ["background.js"]
+  },
+  "data_collection_permissions": {
+    "data_not_collected": true
   }
 }
