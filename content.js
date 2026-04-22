@@ -8,14 +8,16 @@ document.addEventListener(
 
       const imgSrc = e.target.src;
 
-      // Extract filename from URL or use a default
-      let filename = imgSrc.split("/").pop().split("?")[0];
-
-      // If filename doesn't have an extension or is empty, generate one
-      if (!filename || !filename.includes(".")) {
-        const timestamp = new Date().getTime();
-        filename = `image_${timestamp}.jpg`;
-      }
+      const now = new Date();
+      const filename = [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0"),
+      ].join("-") + "-" + [
+        String(now.getHours()).padStart(2, "0"),
+        String(now.getMinutes()).padStart(2, "0"),
+        String(now.getSeconds()).padStart(2, "0"),
+      ].join("") + ".jpg";
 
       // Trigger download
       browser.runtime.sendMessage({
@@ -43,11 +45,16 @@ document.addEventListener(
           e.preventDefault();
           const imgSrc = urlMatch[1];
 
-          let filename = imgSrc.split("/").pop().split("?")[0];
-          if (!filename || !filename.includes(".")) {
-            const timestamp = new Date().getTime();
-            filename = `background_${timestamp}.jpg`;
-          }
+          const now = new Date();
+          const filename = [
+            now.getFullYear(),
+            String(now.getMonth() + 1).padStart(2, "0"),
+            String(now.getDate()).padStart(2, "0"),
+          ].join("-") + "-" + [
+            String(now.getHours()).padStart(2, "0"),
+            String(now.getMinutes()).padStart(2, "0"),
+            String(now.getSeconds()).padStart(2, "0"),
+          ].join("") + ".jpg";
 
           browser.runtime.sendMessage({
             action: "download",
