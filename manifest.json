@@ -23,7 +23,11 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "data_collection_permissions": {
-    "data_not_collected": true
+  "browser_specific_settings": {
+    "gecko": {
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
   }
 }
